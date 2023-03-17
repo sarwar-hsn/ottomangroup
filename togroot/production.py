@@ -157,7 +157,7 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
 AWS_LOCATION = "root"
 AWS_STATIC_LOCATION ="%s/static" % AWS_LOCATION
-STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL= "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_STATIC_LOCATION)
 AWS_PUBLIC_MEDIA_LOCATION = "%s/media/public" % AWS_LOCATION
 DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
