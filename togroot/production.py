@@ -16,6 +16,7 @@ import os
 import sys
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 AUTH_USER_MODEL = 'authentication.User'
@@ -156,8 +157,8 @@ AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_ENDPOINT_URL ="https://ams3.digitaloceanspaces.com"
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
+DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
