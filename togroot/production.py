@@ -147,7 +147,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
+USE_SPACES = os.getenv('USE_SPACES') == 'True'
 if USE_SPACES:
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
@@ -157,8 +157,8 @@ if USE_SPACES:
     AWS_S3_ENDPOINT_URL = "https://ams3.digitaloceanspaces.com"
     AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
 
-    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
+    STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
     STATICFILES_LOCATION = 'static'
