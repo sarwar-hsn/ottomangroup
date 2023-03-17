@@ -167,17 +167,6 @@ if USE_SPACES:
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
-
-    
-    #compressor
-    COMPRESS_STORAGE = STATICFILES_STORAGE
-    COMPRESS_ROOT = STATIC_ROOT
-    COMPRESS_URL = STATIC_URL
-    STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # other finders..
-    )
 else:
     STATIC_URL = 'static/'
     STATIC_ROOT = "staticfilescdn/"
@@ -185,7 +174,7 @@ else:
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'mediafilescdn')
 
 STATICFILES_DIRS=[
-    BASE_DIR/"static",
+    BASE_DIR/"globalstatics",
 ]
     
 # Default primary key field type
