@@ -155,23 +155,15 @@ AWS_S3_REGION_NAME ="ams3"
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_ENDPOINT_URL ="https://ams3.digitaloceanspaces.com"
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
-AWS_LOCATION = "root"
 
-AWS_STATIC_LOCATION ="%s/static" % AWS_LOCATION
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL= "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_STATIC_LOCATION)
-AWS_PUBLIC_MEDIA_LOCATION = "%s/media/public" % AWS_LOCATION
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-AWS_STATIC_LOCATION = 'static'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_STATIC_LOCATION)
-
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-AWS_PUBLIC_MEDIA_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_PUBLIC_MEDIA_LOCATION)
+STATIC_URL = 'https://ottomangrp.ams3.digitaloceanspaces.com/static/'
+MEDIA_URL = 'https://ottomangrp.ams3.digitaloceanspaces.com/media/'
+
 
 
 # Default primary key field type
