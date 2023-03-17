@@ -1,0 +1,109 @@
+{% extends 'views/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container bg-soft-primary">
+      {% if messages %}
+          {% include 'components/messages.html'%}
+      {% endif %}
+    </div>
+  
+    <section class="wrapper bg-soft-primary text-black">
+      <div class="container pt-18 pt-md-20 pb-21 pb-md-21 text-center">
+        <div class="row">
+          <div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 col-xxl-5 mx-auto">
+            <h1 class="display-1  mb-3">Get in Touch</h1>
+            <p class="lead px-xl-10 px-xxl-10">Reach out to us from our contact form. We will get to you as soon as possible.</p>
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+    <section class="wrapper bg-light">
+      <div class="container pb-14 pb-md-16">
+        <div class="row">
+          <div class="col mt-n19 mb-16">
+            <div class="card shadow-lg">
+              <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <div class="p-10 p-md-11 p-lg-13 d-flex flex-column">
+                            <div>
+                                <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-location-pin-alt"></i> </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Address</h5>
+                                <address>{{contact_links.address}}</address>
+                            </div>
+                            <div>
+                                <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Phone</h5>
+                                  <a class="text-body" target="_blank" href="tel:{{contact_links.phone_1}}">{{contact_links.phone_1}}</a>
+                                  <br />
+                                  <a class="text-body" target="_blank" href="tel:{{contact_links.phone_1}}">{{contact_links.phone_2}}</a>
+                            </div>
+                            <div>
+                                <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">E-mail</h5>
+                                <p class="mb-0"><a href="mailto:{{contact_links.email}}" class="link-body">{{contact_links.email}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                <!--/column -->
+                <div class="col-lg-6">
+                  <div class="p-5 p-md-11 p-lg-13">
+                    <div class="map">
+                        <iframe class=" w-100 " style="height:400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12040.177346881715!2d28.931546000560573!3d41.02428593844491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb68b9a51dc5%3A0x2131573203488ad9!2sThe%20Ottoman%20Group%20(TOG)!5e0!3m2!1sen!2str!4v1678705129735!5m2!1sen!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                  </div>
+                  <!--/div -->
+                </div>
+                <!--/column -->
+              </div>
+              <!--/.row -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-xl-10 mx-auto">
+            <div class="row gy-10 gx-lg-8 gx-xl-12 justify-content-md-center">
+              <div class="col-lg-8">
+                <div class="row gx-4 justify-content-center">
+                    <div class="messages text-center py-3">
+                      <h6>Send A Message To Our Expert Team</h6>
+                    </div>
+                    <form method="post" action="{% url 'formsapp:formsapp_contact' %}">
+                      {% csrf_token %}
+                      {{form|crispy}}
+                      <div class="col-4">
+                        <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Send message">
+                      </div>
+                      
+                    </form>
+                    
+                  </div>
+                  <!-- /.row -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+
+
+{% endblock content %}

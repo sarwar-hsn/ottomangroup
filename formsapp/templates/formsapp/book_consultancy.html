@@ -1,0 +1,44 @@
+{% extends 'views/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block cdns %}
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
+    {{ form.media }}
+{% endblock cdns %}
+
+{% block content %}
+ <section class="wrapper bg-light angled upper-end">
+      <div class="container py-14 py-md-16">
+        <div class="container">
+          {% if messages %}
+              {% include 'components/messages.html'%}
+          {% endif %}
+        </div>
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h6 class="text-center mb-10">Book free consultancy of an hour</h6>
+                <form method="post" action="{% url 'formsapp:formsapp_book_consultancy' %}">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            {% csrf_token %}
+                            {{ form | crispy }} {# Renders form fields #}
+                        </div>
+                        <div class="col-8 text-center">
+                            <input type="submit"  id="mc-embedded-subscribe2" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+
+{% endblock content %}

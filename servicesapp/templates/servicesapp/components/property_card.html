@@ -1,0 +1,39 @@
+{% load static thumbnail %}
+
+
+    <div class="property-card card px-1" style="max-width:400px;">
+        <figure class="card-img-top mt-1 overlay overlay-1 hover-scale">
+            <a href="{{property.get_absolute_url}}"> 
+                {% thumbnail property.thumbnail "400x250" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    {% empty %}
+                        <p>No image</p>
+                {% endthumbnail %}
+            </a>
+        </figure>
+        <div class="card-body p-2">
+            <div class="">
+                <a class="hover link-green" href="{{property.get_absolute_url}}"><h6 class="fs-15 font-weight-normal text-black m-0 p-0">{{property.title|truncatewords:9}}</h6></a>
+                <p style="font-size:.7rem;"><i class="uil uil-location-point"></i>{{property.state|lower}} / {{property.city |lower}} </p>
+            </div>
+            <!-- /.post-header -->
+            <div class="post-content">
+                <div class="d-flex fs-15 mb-0 justify-content-around">
+                    <span><i class="uil uil-wall"></i>{{property.property_type}}</span>
+                    <span><i class="uil uil-home"></i>{{property.bedrooms}}</span>   
+                    <span><i class="uil uil-th"></i>{{property.sqft}} sqft</span>
+                </div>
+            </div>
+            <!-- /.post-content -->
+        </div>
+        <!--/.card-body -->
+        <div class="card-footer">
+            <div class="d-flex mb-0 justify-content-between">
+            <p class="align-items-" style="font-size:.7rem;"><i class="uil uil-calendar-alt"></i>{{property.created_at|date}}</p>
+            <p style="font-weight:bold;"><i class="uil uil-dollar-alt"></i>{{property.price}}</p>
+            </div>
+            <!-- /.post-meta -->
+        </div>
+    <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->

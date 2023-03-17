@@ -1,0 +1,185 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+{% block inlinecss %}
+<style>
+    .service-banner-svg {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .service-banner-svg {
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock inlinecss %}
+
+{% block content %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pt-10 pb-8 pt-md-14 pb-md-8 text-center">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                data-group="page-title">
+                <h1 class="display-4 mb-4">Ottoman Group(TOG)<br>
+                    <span class="fs-20">Tourism & Health Tourism</span>
+                </h1>
+                <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                    data-delay="100">
+                    <span><a target="_blank" href="https://ottomantravels.com" class="btn btn-primary rounded mx-1">
+                            <i class="uil uil-globe"></i>ottomantravels.com</a></span>
+                </div>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+<section class="wrapper bg-soft-primary">
+    <div class="container py-14 py-md-16">
+        <div class="row gx-lg-8 gx-xl-12 gy-10 justify-content-center">
+            <div class="col-lg-8">
+                <div class="card" style="border: none;box-shadow: none;">
+                    <div class="card-body classic-view" style="line-height:1.5rem; letter-spacing:.08rem;">
+                        <p>
+                            <span class="dropcap text-fuchsia">Turkey</span>in recent years become a leading destination
+                            for Medical Tourism. With more than fifteen
+                            thousand hospitals around the country and covering <span class="fw-bold">98.8%</span> of its
+                            population under general health
+                            insurance, Turkiye indeed had become a success story around the world. The transformation of
+                            the
+                            <span class="text-fuchsia">health sector of Turkiye</span> has started to
+                            attract
+                            steadily a
+                            large of people from all over the
+                            world
+                            to seek healthcare here. Along with the opportunity to travel around Turkiye which is in the
+                            <span class="fw-bolder">top five</span> most visited countries in the world.
+                        </p>
+                        <img class="service-banner-svg my-10"
+                            src="{% static './assets/img/tourism/tourism-and-health-tourism.svg' %}">
+                        </img>
+                        <p class="">Whether you are looking to have <span class="text-fuchsia">world-class surgery or a
+                                famous hair
+                                transplant</span>, we are here
+                            to help you. Some of the
+                            specialist health care services (not limited to), The Ottoman Group (TOG) provides are
+                            listed below:</p>
+                        <div class="container fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="icon-list bullet-bg bullet-soft-green my-10">
+                                        <li><span><i class="uil uil-check"></i></span><span>Hair Transplants</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Orthopedic</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Brain Surgery</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Plastic Surgery</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Eye Surgery</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="icon-list bullet-bg bullet-soft-green my-10">
+                                        <li><span><i class="uil uil-check"></i></span><span>Gynecology</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Oncology</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Urology</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Dental Treatment</span></li>
+                                        <li><span><i class="uil uil-check"></i></span><span>Cardiology and more</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <section class="wrapper bg-light">
+                    <div class="container py-14 py-md-16">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center">
+                                <h2 class="fs-15 text-uppercase text-muted mb-3">Hair Transplant Packages</h2>
+                            </div>
+                            <!--/column -->
+                        </div>
+                        <!--/.row -->
+                        <div class="pricing-wrapper position-relative">
+                            <div class="shape bg-dot primary rellax w-16 h-18" data-rellax-speed="1"
+                                style="top: 2rem; right: -2.4rem;">
+                            </div>
+                            <div class="shape rounded-circle bg-line red rellax w-18 h-18 d-none d-lg-block"
+                                data-rellax-speed="1" style="bottom: 0.5rem; left: -2.5rem;"></div>
+                            <div class="row gy-6 mt-3 mt-md-5">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="pricing card text-center">
+                                        <div class="card-body p-3">
+                                            <h4 class="card-title">{{pacakges.0.title}}</h4>
+                                            <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8 text-start">
+                                                {% for y in pacakges.0.yes %}
+                                                <li><i class="uil uil-check"></i>{{y}}</li>
+                                                {% endfor %}
+                                                {% for n in pacakges.0.no %}
+                                                <li><i class="uil uil-times bullet-soft-red"></i>{{n}}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <!--/.card-body -->
+                                    </div>
+                                    <!--/.pricing -->
+                                </div>
+                                <!--/column -->
+                                <div class="col-md-6 col-lg-4 popular">
+                                    <div class="pricing card text-center">
+                                        <div class="card-body p-3">
+                                            <h4 class="card-title">{{pacakges.1.title}}</h4>
+                                            <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8 text-start">
+                                                {% for y in pacakges.1.yes %}
+                                                <li><i class="uil uil-check"></i>{{y}}</li>
+                                                {% endfor %}
+                                                {% for n in pacakges.1.no %}
+                                                <li><i class="uil uil-times bullet-soft-red"></i>{{n}}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <!--/.card-body -->
+                                    </div>
+                                    <!--/.pricing -->
+                                </div>
+                                <!--/column -->
+                                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+                                    <div class="pricing card text-center">
+                                        <div class="card-body p-3">
+                                            <h4 class="card-title">{{pacakges.2.title}}</h4>
+                                            <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8 text-start">
+                                                {% for y in pacakges.2.yes %}
+                                                <li><i class="uil uil-check"></i>{{y}}</li>
+                                                {% endfor %}
+                                                {% for n in pacakges.2.no %}
+                                                <li><i class="uil uil-times bullet-soft-red"></i>{{n}}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <!--/.card-body -->
+                                    </div>
+                                    <!--/.pricing -->
+                                </div>
+                                <!--/column -->
+                            </div>
+                            <!--/.row -->
+                        </div>
+                        <!--/.pricing-wrapper -->
+                        <div class="text-center mt-10">
+                            <a  href="{% url 'mainapp:mainapp_contact' %}" class="btn btn-primary rounded-pill">Contact Now</a>
+                        </div>
+                    </div>
+                     
+                    <!-- /.container -->
+                </section>
+                <!-- /section -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

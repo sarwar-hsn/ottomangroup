@@ -1,0 +1,92 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+{% block inlinecss %}
+<style>
+    .service-banner-svg {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .service-banner-svg {
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock inlinecss %}
+
+{% block content %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pt-10 pb-8 pt-md-14 pb-md-8 text-center">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                data-group="page-title">
+                <h1 class="display-4 mb-4">Ottoman Group(TOG)<br>
+                    <span class="fs-20">Export-Import Service</span>
+                </h1>
+                <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                    data-delay="100">
+                    <span><a href="{% url 'formsapp:formsapp_contact' %}"
+                            class="btn btn-primary rounded mx-1">Contact</a></span>
+                </div>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+<section class="wrapper">
+    <div class="container mt-10">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <p>
+                    Turkiye is a global hub of world trade. the country is surrounded by seas in the north, south, and
+                    west making its geography uniquely qualified for the sea trade route. The location of Turkiye also
+                    gives the advantage of being the land that connects the west with the east. The positions provide
+                    the feasibility to enter the market of east and west. In addition to its obvious geographical
+                    benefits, the country's Export and imports have skyrocketed during the last decades. Even in Covid
+                    pandemic country witnessed a sharp rise in export.
+                </p>
+                <img class="service-banner-svg" src="{% static './assets/img/export-import/export-import.svg' %}"></img>
+
+                <p class="pt-10">
+                    The Turkish government's policy to boost export have made it a key player in the export and import
+                    field. The economy of
+                    turkey is one the largest in the world and being in G20 countries comes with some benefits as well.
+                    The heavy machinery
+                    industry has been growing steadily over the last couple of decades and is on the way to becoming a
+                    major player.
+                </p>
+                <p class="pt-10">
+                    Whether you are looking to export to Turkiye or import from Turkiye, the Export-Import service of
+                    the Ottoman Group
+                    (TOG) is the ultimate solution you will require. The Ottoman Group (TOG) is the ultimate solution
+                    for your export and
+                    import need to and from Turkiye. We are working with the following products and more
+                </p>
+                <ul>
+                    <li>Prefabricated House and Living Container</li>
+                    <li>Elevator, Lift, Escalator, Moving Stairs</li>
+                    <li>Heavy Textile Machinery</li>
+                    <li>Medical and Clinical Equipment</li>
+                    <li>Agricultural Machinery i.e. Tractor, Cultivator, Silage Machine, etc.</li>
+                    <li>Turkish Olive Oil, Chocolate, Baby Food, Dry foods, etc.</li>
+                    <li>Turkish Carpet and Prayer Mat</li>
+                    <li>All Kinds of Government Approved Medicine</li>
+                    <li>Industrial Refrigerator i.e.Hotel Deep Freezer</li>
+                    <li>Home Appliances i.e. Washing Machine, Dishwasher etc.</li>
+                    <li>Turkish Defense Industry Equipment</li>
+                    <li>All kinds of Consumer Goods</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% load static %}
+{% load thumbnail %}
+
+<figure class="rounded">
+    <a href="{{blog.get_absolute_url}}"> 
+        {% thumbnail blog.thumbnail "70x70" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% empty %}
+                <p>No image</p>
+        {% endthumbnail %}
+    </a>
+</figure>
+<div class="post-content">
+<h6 class="mb-2"> <a class="link-dark" href="{{blog.get_absolute_url}}">{{blog.title}}</a> </h6>
+<ul class="post-meta">
+    <li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{blog.created_at|date}}</span></li>
+    <li class="post-views ms-auto"><i class="uil uil-eye"></i>{{blog.view_count}}</li>
+</ul>
+<!-- /.post-meta -->
+</div>

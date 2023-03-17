@@ -1,0 +1,81 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+{% block inlinecss %}
+<style>
+    .service-banner-svg {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .service-banner-svg {
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock inlinecss %}
+
+{% block content %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pt-10 pb-8 pt-md-14 pb-md-8 text-center">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                data-group="page-title">
+                <h1 class="display-4 mb-4">Ottoman Group(TOG)<br>
+                    <span class="fs-20">Citizenship & Residence Permit Service</span>
+                </h1>
+                <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                    data-delay="100">
+                    <span><a href="{% url 'formsapp:formsapp_contact' %}"
+                            class="btn btn-primary rounded mx-1">Contact</a></span>
+                </div>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+<section class="wrapper">
+    <div class="container mt-10">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <p>
+                    Turkish Citizenship by investment is one of the coveted ones in the world. Turkiye has one of the
+                    fast-growing economies among the G20 countries. The universal healthcare, low cost of living, ease
+                    to open a business, and increasing number of tourist visitors make the country attractive to many
+                    foreign nationals to settle in Turkiye. The young and skilled population is also a magnet for
+                    companies to set up a branch here. The transportation infrastructure is one of the best if not great
+                    in Turkiye. Overall Turkiye is an excellent place for any non-Turkish to move here and the
+                    citizenship program gives that opportunity.
+                </p>
+                <img class="service-banner-svg"
+                    src="{% static './assets/img/citizenship/citizenship-and-residence-permit.svg' %}"></img>
+
+                <p class="pt-10">
+                    The Turkish Government offers several citizenship schemes and residence permits. The most prominent
+                    among them is to buy
+                    one or more than one property in total worth $400,000 for the fast-track citizenship acquisition.
+                    And the most popular
+                    and fastest way to acquire a residence permit for you and your immediate family is to buy a home
+                    worth more than
+                    $75,0000 and $50,000 in big cities and small municipalities consequently.
+                </p>
+                <p class="pt-10">
+                    Turkish advanced and affordable health care system, business opportunities, quality education, and
+                    halal foods make
+                    living in Turkiye most desirable. With our service, you can settle your family in Turkiye which will
+                    ensure a safe and
+                    bright future for your next generation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock content %}

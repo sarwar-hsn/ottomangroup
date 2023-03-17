@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+
+Host: https://ottomangrp.com
+Sitemap: https://ottomangrp.com/sitemap.xml

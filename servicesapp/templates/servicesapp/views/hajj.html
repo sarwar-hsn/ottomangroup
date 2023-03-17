@@ -1,0 +1,99 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+{% block inlinecss %}
+<style>
+    .service-banner-svg {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .service-banner-svg {
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock inlinecss %}
+
+{% block content %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pt-10 pb-8 pt-md-14 pb-md-8 text-center">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                data-group="page-title">
+                <h1 class="display-4 mb-4">Ottoman Group(TOG)<br>
+                    <span class="fs-20">Hajj & Umrah Service</span>
+                </h1>
+                <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                    data-delay="100">
+                    <span><a href="{% url 'formsapp:formsapp_contact' %}"
+                            class="btn btn-primary rounded mx-1">Contact</a></span>
+                </div>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+<section class="wrapper">
+    <div class="container mt-10">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <p>
+                    The Ottoman Group (TOG) has the full package of the Hajj. As a company, we take inspiration from
+                    spirituality.
+                    And we are committed to giving our customers the best spiritual experience possible with high-end
+                    quality service
+                    and hospitality with our premium Hajj Package.
+                    There is no better time than now to fulfill your dream of visiting the land of the prophet and
+                    reconnecting
+                    spiritually to the creator of the universe.
+                    The Ottoman Group (TOG) is here to give all kinds of assistance needed by the Hujjaj and Umrah
+                    performers.
+                </p>
+                <img class="service-banner-svg" src="{% static './assets/img/hajj-umrah/hajj-and-umrah.svg' %}"></img>
+                <h2 class="pt-10 fs-25">
+                    Our Hajj Services Include the following amenities:
+                </h2>
+                <ul>
+                    <li>Apply to get in the country quota beforehand</li>
+                    <li>Comfortable Plane Journey</li>
+                    <li>Finest and short distance Hotel with first-grade service</li>
+                    <li>Helpful and Knowledgable Mutawalli with experience</li>
+                    <li>Short training on how to perform Hajj</li>
+                    <li>Includes a historical sightseeing tour based on the package.</li>
+                </ul>
+                <h2 class="pt-10 fs-25">
+                    Our different Umrah packages are:
+                </h2>
+                <ul>
+                    <li>Regular Umrah: only performing the mandatory duties of Umrah and coming back within the shortest
+                        time.</li>
+                    <li>Umrah and Heritage Tour: this includes the main duties of Umrah as well as some extra days of
+                        traveling around
+                        historical places of Islam.
+                    </li>
+                </ul>
+                <h2 class="pt-10 fs-25">
+                    We offer the following services during Umrah:
+                </h2>
+                <ul>
+                    <li>Experienced and Knowledgable Leader of Umrah Group</li>
+                    <li>Short training on rituals of Umrah by Imam.</li>
+                    <li>Economic or first class air journey as per package</li>
+                    <li>Nearest Hotel to the Haram to stay at night.</li>
+                    <li>Regular high-quality Food or premium as per demand.</li>
+                    <li>Visit the historical site of Islam as per the package.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock content %}

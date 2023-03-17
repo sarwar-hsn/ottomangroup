@@ -1,0 +1,127 @@
+{% extends 'views/base.html' %}
+
+
+{% block content %}
+
+<section class="wrapper bg-soft-primary text-black">
+    <div class="container pt-15 pb-15 pt-md-15 pb-md-15 text-center">
+        <div class="row">
+            <div class="widget  col-sm-10 col-md-10 col-lg-6 pt-5 mx-auto">
+                <h1 class="fs-28 pb-2">
+                    <span class="underline-3 style-3 green">Blogs</span>
+                </h1>
+                <form class="search-form" action="{% url 'blogsapp:blogsapp_search' %}" method="get">
+                    <div class="form-floating mb-0">
+                        <input id="search-form" class="form-control" name="s"  type="search"  placeholder="Search">
+                        <label for="search-form">Search</label>
+                    </div>
+                </form>
+                <!-- /.search-form -->
+            </div>
+            <!-- /.widget --> 
+            {% block tagorcategory %}{% endblock tagorcategory %}  
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+
+<section class="wrapper bg-soft-white">
+    {% if page_obj.object_list %}
+    <div class="container py-12 py-md-14">
+        <div class="row gx-lg-8 gx-xl-12">
+             {% comment %} left side {% endcomment %}
+            <div class="col-lg-8"> 
+                <div class="blog grid grid-view">
+                    <div class="row isotope gx-md-8 gy-8 mb-8">
+                        {% for blog in page_obj.object_list %}
+                            {% include 'blogsapp/components/blogcard_big.html' %}
+                        {% endfor %}
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.blog -->
+                <nav class="d-flex" aria-label="pagination">
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                            </a>
+                        {% endif %}
+                        {% if page_obj.number|add:'-4' > 1 %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+                        {% endif %}
+                        {% for i in page_obj.paginator.page_range %}
+                            {% if page_obj.number == i %}
+                                <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                                <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+                        {% endif %}
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    
+                    </ul>
+                    <!-- /.pagination -->
+                </nav>
+                <!-- /nav -->
+            </div>
+            <!-- /column -->
+            {% comment %} right side {% endcomment %}
+            <aside class="col-lg-4 sidebar mt-8 mt-lg-6">
+                <div class="widget">
+                    <h4 class="widget-title mb-3">Recent Posts</h4>
+                        <ul class="image-list">
+                            {% for blog in recent_blogs %}
+                                <li>{% include 'blogsapp/components/blogcard_sm.html' %}</li>
+                            {% endfor %}                            
+                        </ul>
+                        <!-- /.image-list -->
+                </div>
+                <!-- /.widget -->
+                <div class="widget">
+                    <h4 class="widget-title mb-3">Categories</h4>
+                    <ul class="unordered-list bullet-primary text-reset">
+                        {% for category in categories %}
+                            <li><a href="{{category.get_absolute_url}}">{{category}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.widget -->
+                <div class="widget">
+                    <h4 class="widget-title mb-3">Tags</h4>
+                    <ul class="list-unstyled tag-list">
+                        {% for tag in tags %}
+                            <li><a href="{{tag.get_absolute_url}}" class="btn btn-soft-ash btn-sm rounded-pill">{{tag}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.widget -->
+            </aside>
+            <!-- /column .sidebar -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    {% else %}
+        <div class="container-fluid bg-soft-primary py-12 py-md-14">
+            <div class="row justify-content-end">
+                <p class="col text-center">no result found <span class="text-yellow"><i class="uil uil-sad"></i></span> </p>
+            </div>
+        </div>
+    {% endif %}
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+{% endblock content %}

@@ -1,0 +1,103 @@
+{% extends 'views/base.html' %}
+{% load static %}
+
+{% block inlinecss %}
+<style>
+    .service-banner-svg {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .service-banner-svg {
+            width: 100%;
+        }
+    }
+</style>
+
+{% endblock inlinecss %}
+
+{% block content %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pt-10 pb-8 pt-md-14 pb-md-8 text-center">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
+                data-group="page-title">
+                <h1 class="display-4 mb-4">Ottoman Group(TOG)<br>
+                    <span class="fs-20">Service Solutions</span>
+                </h1>
+                <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
+                    data-delay="100">
+                    <span><a href="{% url 'formsapp:formsapp_contact' %}"
+                            class="btn btn-primary rounded mx-1">Contact</a></span>
+                </div>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+<section class="wrapper">
+    <div class="container mt-10">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <p>
+                    As a newly arrived one, you may have challenges with the language barrier or struggling to set up
+                    your business in
+                    Turkiye.Whatever the challenge we are here with you. Our expert team is ready to facilitate your
+                    work with sincere
+                    service. In addition to the services we provide on real estate, resident permit, citizenship,
+                    Export-Import and Trading,
+                    and higher education in Turkiye, Hajj, and Umrah; we have some other service solutions described
+                    below
+                </p>
+                <img class="service-banner-svg"
+                    src="{% static './assets/img/service-solutions/service-solutions.svg' %}"></img>
+                <h2 class="pt-10 fs-25">
+                    OInsurance Solution: The Ottoman Group (TOG) offers consultancy for all kinds of Insurance ranging
+                    from
+                </h2>
+                <ul>
+                    <li>Health Insurance</li>
+                    <li>Car Insurance</li>
+                    <li>Travel Insurance</li>
+                    <li>Earthquake Insurance, etc.</li>
+                </ul>
+                <h2 class="pt-10 fs-25">
+                    Plane Ticket: Get a discounted Air Ticket for your travel with TOG's solution of Air Travel.
+                    Economic or luxurious, TOG
+                    will bring to you the finest offer for comfortable and memorable journeys
+                </h2>
+                <ul>
+                    <li>International Plane Ticket</li>
+                    <li>Domestic Plane Ticket</li>
+                </ul>
+
+                <h2 class="pt-10 fs-25">
+                    Hotel/Apartment (Airbnb): Take the top-notch Accommodation Solution of TOG during your travel. Enjoy
+                    your travel
+                    hassle-free
+                </h2>
+                <ul>
+                    <li>Hotel Booking</li>
+                    <li>Flat Renting for a short period (days/weeks/months) similar to Airbnb</li>
+                </ul>
+
+                <h2 class="pt-10 fs-25">
+                    Transportation: We also facilitate Transportation for tourists traveling on their own to Turkiye
+                </h2>
+                <ul>
+                    <li>Airport Pickup</li>
+                    <li>Car Rent during the whole Trip</li>
+                    <li>Public Transportation Card</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock content %}

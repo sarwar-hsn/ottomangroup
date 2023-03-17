@@ -1,0 +1,10 @@
+{% extends 'blogsapp/views/index.html' %}
+
+{% block tagorcategory %}
+    <div class="container pt-5 h-100 d-flex flex-column align-items-start lead">
+        <h1 class="fs-18">{{query_category|title}}
+            <span class="lead fs-15">({{total}} posts)<span>
+        </h1>
+    </div>
+
+{% endblock tagorcategory %}
