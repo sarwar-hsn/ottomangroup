@@ -98,7 +98,12 @@ WSGI_APPLICATION = 'togroot.wsgi.application'
 DB = os.getenv("DATABASE_URL", None)
 if DB is not None:
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ottomangrpdb',
+        'USER': 'it',
+        'PASSWORD': 'AVNS_TMPzCzUap5sDQ1HgMxk',
+        'HOST': 'tog-db-do-user-11906477-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
     CACHES = {
         'default': {
