@@ -153,7 +153,7 @@ AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = "ottomangrp"
 AWS_S3_REGION_NAME ="ams3"
 AWS_DEFAULT_ACL = 'public-read'
-AWS_S3_ENDPOINT_URL ="https://ams3digitaloceanspaces.com"
+AWS_S3_ENDPOINT_URL ="https://ams3.digitaloceanspaces.com"
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
 AWS_LOCATION = "root"
