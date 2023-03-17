@@ -137,13 +137,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = "staticfilescdn/"
-MEDIA_URL='media/'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'mediafilescdn')
-STATICFILES_DIRS=[
-    BASE_DIR/"static",
-]
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') 
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') 
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #ottomangrp
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+AWS_S3_ENDPOINT_URL = "https://ams3.digitaloceanspaces.com"
+AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
+
+STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
+DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+STATICFILES_LOCATION = 'static'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

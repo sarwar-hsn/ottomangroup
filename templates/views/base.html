@@ -33,11 +33,11 @@
 
 
   {% block css %}
-  <link rel="shortcut icon" href={% static '/assets/img/favicon_dark/favicon.ico' %}>
-  <link rel="stylesheet" href="{% static '/assets/css/plugins.css' %}">
-  <link rel="stylesheet" href="{% static '/assets/css/style.css' %}">
-  <link rel="stylesheet" href="{% static './assets/css/colors/sky.css' %}">
-  <link rel="preload" href="{% static './assets/css/fonts/urbanist.css' %}" as="style" onload="this.rel='stylesheet'">
+  <link rel="shortcut icon" href={% static 'assets/img/favicon_dark/favicon.ico' %}>
+  <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/colors/sky.css' %}">
+  <link rel="preload" href="{% static 'assets/css/fonts/urbanist.css' %}" as="style" onload="this.rel='stylesheet'">
   {% endblock css %}
   <style>
     .logo{
@@ -66,7 +66,7 @@
         <div class="container flex-lg-column">
           <div class="topbar d-flex flex-row w-100 justify-content-between align-items-center">
             <div class="navbar-brand"><a href="{% url 'mainapp:mainapp_index' %}">
-              <img class="logo" src="{% static '/assets/img/logo-dark-resized.png' %}" alt="logo" /></a>
+              <img class="logo" src="{% static 'assets/img/logo-dark-resized.png' %}" alt="logo" /></a>
             </div>
             <div class="navbar-other ms-auto">
               <ul class="navbar-nav flex-row align-items-center">
@@ -144,130 +144,8 @@
         </div>
         <!-- /.container -->
       </nav>
-      <!-- /.navbar -->
-      {% comment %} <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
-        <div class="offcanvas-header">
-          <h3 class="text-white fs-30 mb-0">Sandbox</h3>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body pb-6">
-          <div class="widget mb-8">
-            <p>Sandbox is a multipurpose HTML5 template with various layouts which will be a great solution for your business.</p>
-          </div>
-          <!-- /.widget -->
-          <div class="widget mb-8">
-            <h4 class="widget-title text-white mb-3">Contact Info</h4>
-            <address> Moonshine St. 14/05 <br /> Light City, London </address>
-            <a href="mailto:first.last@email.com">info@email.com</a><br /> 00 (123) 456 78 90
-          </div>
-          <!-- /.widget -->
-          <div class="widget mb-8">
-            <h4 class="widget-title text-white mb-3">Learn More</h4>
-            <ul class="list-unstyled">
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <!-- /.widget -->
-          <div class="widget">
-            <h4 class="widget-title text-white mb-3">Follow Us</h4>
-            <nav class="nav social social-white">
-              <a href="#"><i class="uil uil-twitter"></i></a>
-              <a href="#"><i class="uil uil-facebook-f"></i></a>
-              <a href="#"><i class="uil uil-dribbble"></i></a>
-              <a href="#"><i class="uil uil-instagram"></i></a>
-              <a href="#"><i class="uil uil-youtube"></i></a>
-            </nav>
-            <!-- /.social -->
-          </div>
-          <!-- /.widget -->
-        </div>
-        <!-- /.offcanvas-body -->
-      </div> {% endcomment %}
-      <!-- /.offcanvas -->
-    </header>
-    <!-- /header -->
-  {% comment %} <header class="wrapper">
-    <nav class="navbar navbar-expand-lg center-nav transparent navbar-light caret-none">
-      <div class="container flex-lg-row flex-nowrap align-items-center">
-        <div class="navbar-brand w-100">
-          <a href="{% url 'mainapp:mainapp_index' %}">
-            <img src="{% static '/assets/img/logo-dark.png' %}" alt="logo" />
-          </a>
-        </div>
-        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-          <div class="offcanvas-header d-lg-none">
-            <h3 class="text-white fs-30 mb-0">TOG</h3>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-            <ul class="navbar-nav">
-              <li><a class="nav-link" href="{% url 'mainapp:mainapp_index' %}">Home</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="dropdown-item" href="{%url 'servicesapp:servicesapp_home'%}">All Services</a>
-                    <hr class="my-2" />
-                  <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_real_estate' %}">Real Estate & Consultancy</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_study' %}">Study In Turkey</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="./services2.html">Citizenship & Residence Permit</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="./services.html">Export-Import</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="./services.html">Hajj & Umrah</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="./services2.html">Tourism-Health Tourism</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="./services.html">Service Solutions</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" href="{% url 'blogsapp:blogsapp_home' %}">Blogs</a></li>
-              <li><a class="nav-link" href="{% url 'mainapp:mainapp_about' %}">About</a></li>
-              <li><a class="nav-link" href="{% url 'mainapp:mainapp_contact' %}">Contact</a></li>
-            </ul>
-            <!-- /.navbar-nav -->
-            <div class="offcanvas-footer d-lg-none">
-              <div>
-                <a href="mailto:info@ottomangrp.com" class="link-inverse">info@ottomangrp.com</a>
-                <br /> 00 (123) 456 78 90 <br />
-                <nav class="nav social social-white mt-4">
-                  <a href="#"><i class="uil uil-twitter"></i></a>
-                  <a href="#"><i class="uil uil-facebook-f"></i></a>
-                  <a href="#"><i class="uil uil-dribbble"></i></a>
-                  <a href="#"><i class="uil uil-instagram"></i></a>
-                  <a href="#"><i class="uil uil-youtube"></i></a>
-                </nav>
-                <!-- /.social -->
-              </div>
-            </div>
-            <!-- /.offcanvas-footer -->
-          </div>
-          <!-- /.offcanvas-body -->
-        </div>
-        <!-- /.navbar-collapse -->
-        <div class="navbar-other w-100 d-flex ms-auto">
-          <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <li class="nav-item">
-              <nav class="nav social social-muted justify-content-end text-end">
-                <a href="#"><i class="uil uil-twitter"></i></a>
-                <a href="#"><i class="uil uil-facebook-f"></i></a>
-                <a href="#"><i class="uil uil-dribbble"></i></a>
-                <a href="#"><i class="uil uil-instagram"></i></a>
-              </nav>
-              <!-- /.social -->
-            </li>
-            <li class="nav-item d-lg-none">
-              <button class="hamburger offcanvas-nav-btn"><span></span></button>
-            </li>
-          </ul>
-          <!-- /.navbar-nav -->
-        </div>
-        <!-- /.navbar-other -->
-      </div>
-      <!-- /.container -->
-    </nav>
-    <!-- /.navbar -->
-  </header>  {% endcomment %}
 
+    </header>
   {% endblock header %}
 
 
@@ -359,8 +237,8 @@
   {% endblock page_progress %}
 
   {% block js %}
-  <script src="{% static './assets/js/plugins.js' %}"></script>
-  <script src="{% static './assets/js/theme.js' %}"></script>
+  <script src="{% static 'assets/js/plugins.js' %}"></script>
+  <script src="{% static 'assets/js/theme.js' %}"></script>
   {% endblock js %}
 
   {% block extrajs %}{% endblock extrajs %}

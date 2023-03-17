@@ -53,7 +53,7 @@ def book_consultancy(request):
             'form':ConsultancyForm(),
             'meta':seo_utils.meta_book_consultancy(),
         }
-        return render(request,'formsapp/book_consultancy.html',context={'form':form})
+        return render(request,'formsapp/book_consultancy.html',context=context)
 
 
 def contact(request):
