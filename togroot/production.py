@@ -159,11 +159,11 @@ STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
 DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-AWS_STATIC_LOCATION = 'static/'
+AWS_STATIC_LOCATION = 'static'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_STATIC_LOCATION)
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-AWS_PUBLIC_MEDIA_LOCATION = 'media/'
+AWS_PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, AWS_PUBLIC_MEDIA_LOCATION)
 
 
