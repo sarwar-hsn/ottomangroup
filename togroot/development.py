@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "sorl.thumbnail",
     "django_cleanup.apps.CleanupConfig",
     "meta",
+    "storages",
 
     #my applications
     'analyticsapp',
