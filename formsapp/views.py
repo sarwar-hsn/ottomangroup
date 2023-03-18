@@ -38,7 +38,7 @@ def book_consultancy(request):
             mail_body = obj.get_property_values()
             try:
                 send_mail(
-                    'Contact Query',
+                    'free consultancy query',
                     mail_body,
                     'it@ottomangrp.com',
                     ['info@ottomangrp.com'],
@@ -64,7 +64,7 @@ def contact(request):
                 obj = form.save()
                 mail_body = obj.get_property_values()
                 send_mail(
-                    'requested free consultancy',
+                    'contact query',
                     mail_body,
                     'it@ottomangrp.com',
                     ['info@ottomangrp.com'],
@@ -73,4 +73,4 @@ def contact(request):
                 return redirect("mainapp:mainapp_contact")
         except:
             messages.error(request, "form submission failed")
-        return redirect("mainapp:mainapp_contact")
+    return redirect("mainapp:mainapp_contact")

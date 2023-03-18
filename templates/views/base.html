@@ -33,12 +33,15 @@
 
 
   {% block css %}
-  <link rel="shortcut icon" href={% static 'assets/img/favicon_dark/favicon.ico' %}>
-  <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/colors/sky.css' %}">
-  <link rel="preload" href="{% static 'assets/css/fonts/urbanist.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="shortcut icon" href={% static 'assets/img/favicon_dark/favicon.ico' %}>
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/colors/sky.css' %}">
+    <link rel="preload" href="{% static 'assets/css/fonts/urbanist.css' %}" as="style" onload="this.rel='stylesheet'">
   {% endblock css %}
+  {% block inlinecss %}{% endblock inlinecss %}
+  {% block cdns %}{% endblock cdns %}
+
   <style>
     .logo{
       width: 135px;
@@ -49,19 +52,13 @@
     }
 
   </style>
-  {% block inlinecss %}
-
-    
-  {% endblock inlinecss %}
-
-  {% block cdns %}{% endblock cdns %}
 
 
 </head>
 
 <body>
   {% block header %}
-  <header class="wrapper bg-soft-primary">
+    <header class="wrapper bg-soft-primary">
       <nav class="navbar navbar-expand-lg extended navbar-light navbar-bg-light caret-none">
         <div class="container flex-lg-column">
           <div class="topbar d-flex flex-row w-100 justify-content-between align-items-center">
@@ -146,6 +143,7 @@
       </nav>
 
     </header>
+    <!-- /header -->
   {% endblock header %}
 
 

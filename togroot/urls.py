@@ -31,6 +31,10 @@ sitemaps={
     'categories':smap.CategorySiteMap(),
 }
 
+admin.site.site_header = "Ottoman Group"
+admin.site.site_title = "TOG Admin Portal"
+admin.site.index_title = "Welcome to TOG"
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

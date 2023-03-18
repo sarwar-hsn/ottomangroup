@@ -45,40 +45,7 @@
 </section>
 
 {% comment %} our services {% endcomment %}
-<section class="wrapper bg-light">
-    <div class="container pt-15 pt-md-17 pb-13 pb-md-15">
-        <div class="row text-center">
-            <div class="col-xl-10 mx-auto">
-                <h2 class="fs-15 text-uppercase text-primary mb-3">Our Services</h2>
-                <h3 class="display-4 mb-10 px-xxl-10">Currently Ottoman Group Offering Following Services</h3>
-            </div>
-            <!-- /column -->
-        </div>
-        <!-- /.row -->
-        <div class="row gy-6">
-            {% for service in services %}
-                <div class="col-md-6 col-lg-4">
-                    <a href="{% url service.link %}" class="card shadow-lg lift h-100">
-                        <div class="card-body p-5 d-flex flex-row">
-                            <div>
-                                <span class="avatar {{service.color}} text-white w-11 h-11 fs-20 me-4">
-                                    <img src="{%static "assets/img/icons/serviceicons/" %}{{service.icon}}"
-                                        class=" icon-svg icon-svg-xs  text-white" alt="" />
-                                </span>
-                            </div>
-                            <div>
-                                <h4 class="mb-1">{{service.title}}</h4>
-                                <p class="mb-0 text-body">{{service.description}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!--/column -->
-            {% endfor %}
-        </div>
-        <!-- /.row -->
-    </div>
-</section>
+{% include 'components/services.html' %}
 
 {% comment %} why choose us {% endcomment %}
 <section class="wrapper bg-light angled upper-start lower-start">

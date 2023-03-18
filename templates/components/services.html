@@ -1,0 +1,143 @@
+{% load static %}
+<section class="wrapper bg-light">
+    <div class="container pt-15 pt-md-17 pb-13 pb-md-15">
+        <div class="row text-center">
+            <div class="col-xl-10 mx-auto">
+                <h2 class="fs-15 text-uppercase text-primary mb-3">Our Services</h2>
+                <h3 class="display-4 mb-10 px-xxl-10">Currently Ottoman Group Offering Following Services</h3>
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+        <div class="row gy-6">
+            {% comment %} service 0 real-estate {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.0.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.0.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/building.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.0.title}}</h4>
+                            <p class="mb-0 text-body">{{services.0.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 1 citizenship {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.1.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.1.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/passport.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.1.title}}</h4>
+                            <p class="mb-0 text-body">{{services.1.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 2 export-import {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.2.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.2.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/export_import.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.2.title}}</h4>
+                            <p class="mb-0 text-body">{{services.2.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 3 Study in Turkiye" {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.3.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.3.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/study.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.3.title}}</h4>
+                            <p class="mb-0 text-body">{{services.3.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 4 Hajj & Umrah" {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.4.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.4.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/hajj.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.4.title}}</h4>
+                            <p class="mb-0 text-body">{{services.4.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 5 tourism&heath" {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.5.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.5.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/tourism.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.5.title}}</h4>
+                            <p class="mb-0 text-body">{{services.5.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            {% comment %} service 6 service solutions" {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url services.6.link %}" class="card shadow-lg lift h-100">
+                    <div class="card-body p-5 d-flex flex-row">
+                        <div>
+                            <span class="avatar {{services.6.color}} text-white w-11 h-11 fs-20 me-4">
+                                <img src="{%static "assets/img/icons/serviceicons/service.png" %}"
+                                    class=" icon-svg icon-svg-xs  text-white" alt="" />
+                            </span>
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{services.6.title}}</h4>
+                            <p class="mb-0 text-body">{{services.6.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--/column -->
+            
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
