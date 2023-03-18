@@ -50,8 +50,6 @@
                                     <figure class="rounded">
                                         {% thumbnail image "937x513" crop='center' quality=75  as im %}
                                             <img src="{{ im.url }}" width="100%" height="{{ im.height }}">
-                                            {% empty %}
-                                                <img src="" alt="dummyimage">
                                         {% endthumbnail %}
                                         <a class="item-link" href="{{image.url}}" data-glightbox data-gallery="product-group">
                                             <i class="uil uil-focus-add"></i>
