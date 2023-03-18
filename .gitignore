@@ -41,6 +41,7 @@ __pycache__/
 media/
 staticfiles/
 mediafiles/
+collected_media/
 staticfilescdn/
 mediafilescdn/
 env/
