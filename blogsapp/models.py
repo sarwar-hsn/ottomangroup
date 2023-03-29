@@ -64,7 +64,7 @@ class Blog(ModelMeta,models.Model):
     seo_imagelink = models.URLField(null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=300)
     slug = models.SlugField(unique=True,blank=True,null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(Author,null=True, on_delete=models.SET_NULL)
