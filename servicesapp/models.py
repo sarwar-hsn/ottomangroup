@@ -41,8 +41,8 @@ class Property(ModelMeta,models.Model):
     #regular properties
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-    title = models.CharField(max_length=300)
-    slug = models.SlugField(unique=True,blank=True,null=True)
+    title = models.CharField(max_length=250)
+    slug = models.SlugField(unique=True,blank=True,null=True,max_length=250)
     description = models.TextField()
     property_type = models.CharField(max_length=20, choices=PROPERTY_TYPES)
     price = models.IntegerField()
