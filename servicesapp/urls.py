@@ -7,6 +7,7 @@ app_name = 'servicesapp'
 urlpatterns = [
     path('',views.home,name="servicesapp_home"),
     path('study-in-turkey/',views.study,name="servicesapp_study"),
+    path('study-in-turkey/packages',views.study_packages,name="servicesapp_study_packages"),
     path('real-estate-and-consultancy/',views.real_estate,name="servicesapp_real_estate"),
     path('properties',views.property,name="servicesapp_properties"),
     path('property-details/<slug:prop_slug>',views.prop_details,name="servicesapp_property_details"),

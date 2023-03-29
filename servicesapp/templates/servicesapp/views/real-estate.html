@@ -15,6 +15,9 @@
 
 {% endblock inlinecss %}
 
+{% block navmenu %}
+    <li><a class="nav-link" href="{% url 'servicesapp:servicesapp_properties' %}">Properties</a></li>
+{% endblock navmenu %}
 
 {% block content %}
 
@@ -26,7 +29,6 @@
         <p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">Be the owner of a property from the comfrom of your home</p>
         <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="100">
           <span><a href="{% url 'formsapp:formsapp_book_consultancy' %}" class="btn btn-primary rounded mx-1">Free Consultancy</a></span>
-          <span><a href="{% url 'servicesapp:servicesapp_properties' %}" class="btn btn-primary rounded mx-1">Properties</a></span>
         </div>
       </div>
       <!-- /column -->

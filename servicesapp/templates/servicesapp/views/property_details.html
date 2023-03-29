@@ -2,6 +2,10 @@
 {% load thumbnail %}
 
 
+{% block navmenu %}
+    <li><a class="nav-link" href="{% url 'servicesapp:servicesapp_properties' %}">Properties</a></li>
+{% endblock navmenu %}
+
 
 {% block content %}
 <section class="wrapper bg-soft-primary text-black">

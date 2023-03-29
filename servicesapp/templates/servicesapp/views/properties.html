@@ -1,8 +1,13 @@
 {% extends 'views/base.html' %}
 
 
-{% block content %}
+{% block navmenu %}
+    <li><a class="nav-link" href="{% url 'servicesapp:servicesapp_properties' %}">Properties</a></li>
+{% endblock navmenu %}
 
+
+
+{% block content %}
 <section class="wrapper bg-soft-primary text-black">
     <div class="container pt-15 pb-15 pt-md-15 pb-md-15 text-center">
         <div class="row">

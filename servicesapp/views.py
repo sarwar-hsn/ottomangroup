@@ -15,6 +15,7 @@ def home(request):
     }
     return render(request, 'servicesapp/views/index.html',context=context)
 
+
 #study/education home page
 def study(request):
     featured_blogs = Blog.objects.filter(featured=True).order_by('view_count')[:6]
@@ -25,12 +26,18 @@ def study(request):
         'faqs': edu_utils.faqs,
         'featured_blogs':featured_blogs,
         'why_turkey_blog': blog,
-        'services':edu_utils.services,
         'working_process':edu_utils.working_process,
         'meta': seo_utils.meta_study(),
     }
     return render(request, 'servicesapp/views/study.html',context=context)
-
+#this is study package page
+def study_packages(request):
+    context={
+        'package_table':edu_utils.pacakge_table,
+        'services':edu_utils.services,
+        'meta':seo_utils.meta_study_packages(),
+    }
+    return render(request, 'servicesapp/views/study_packages.html',context=context) 
 #real-estate home page
 def real_estate(request):
     context={

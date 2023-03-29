@@ -85,24 +85,28 @@
               </div>
               <div class="offcanvas-body d-flex flex-column h-100">
                 <ul class="navbar-nav">
-                  <li><a class="nav-link" href="{% url 'mainapp:mainapp_index' %}">Home</a></li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-                    <ul class="dropdown-menu">
-                      <li class="nav-item"><a class="dropdown-item" href="{%url 'servicesapp:servicesapp_home'%}">All Services</a>
-                        <hr class="my-2" />
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_real_estate' %}">Real Estate & Consultancy</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_study' %}">Study In Turkey</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_tourism' %}">Tourism-Health Tourism</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_citizenship' %}">Citizenship & Residence Permit</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_export_import' %}">Export-Import</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_hajj_umrah' %}">Hajj & Umrah</a></li>
-                      <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_service_solutions' %}">Service Solutions</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="nav-link" href="{% url 'blogsapp:blogsapp_home' %}">Blogs</a></li>
-                  <li><a class="nav-link" href="{% url 'mainapp:mainapp_about' %}">About</a></li>
-                  <li><a class="nav-link" href="{% url 'mainapp:mainapp_contact' %}">Contact</a></li>
+                  
+                    <li><a class="nav-link" href="{% url 'mainapp:mainapp_index' %}">Home</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="dropdown-item" href="{%url 'servicesapp:servicesapp_home'%}">All Services</a>
+                          <hr class="my-2" />
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_real_estate' %}">Real Estate & Consultancy</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_study' %}">Study In Turkey</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_tourism' %}">Tourism-Health Tourism</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_citizenship' %}">Citizenship & Residence Permit</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_export_import' %}">Export-Import</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_hajj_umrah' %}">Hajj & Umrah</a></li>
+                        <li class="nav-item"><a class="dropdown-item" href="{% url 'servicesapp:servicesapp_service_solutions' %}">Service Solutions</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="nav-link" href="{% url 'blogsapp:blogsapp_home' %}">Blogs</a></li>
+                    {% block navmenu %}
+                    {% endblock navmenu %}
+                    <li><a class="nav-link" href="{% url 'mainapp:mainapp_about' %}">About</a></li>
+                    <li><a class="nav-link" href="{% url 'mainapp:mainapp_contact' %}">Contact</a></li>
+                    
                 </ul>
                 <!-- /.navbar-nav -->
                 <div class="offcanvas-footer d-lg-none">

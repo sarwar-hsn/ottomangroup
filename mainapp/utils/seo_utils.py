@@ -146,6 +146,26 @@ def meta_study():
         )
         return meta
 
+def meta_study_packages():
+    seo_obj = seo.objects.filter(page='study_packages')
+    if len(seo_obj) < 1:
+        return None
+    else:
+        seo_obj = seo_obj[0]
+        meta = Meta(
+            use_og = seo_obj.use_og,
+            use_twitter = seo_obj.use_twitter,
+            use_facebook = seo_obj.use_facebook,
+            use_schemaorg = seo_obj.use_schemaorg,
+            title=seo_obj.seo_title,
+            description=seo_obj.description,
+            keywords=seo_obj.string_to_array(),
+            url=seo_obj.page_url,
+            image=seo_obj.image_url,
+            locale=seo_obj.locale,
+        )
+        return meta
+
 def meta_export_import():
     seo_obj = seo.objects.filter(page='export_import')
     if len(seo_obj) < 1:

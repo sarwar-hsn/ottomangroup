@@ -15,6 +15,7 @@ class seo(models.Model):
         ('real_estate','real_estate'),
         ('citizenship','citizenship'),
         ('study','study'),
+        ('study_packages','study_packages'),
         ('export_import','export_import'),
         ('hajj_umrah','hajj_umrah'),
         ('tourism','tourism'),

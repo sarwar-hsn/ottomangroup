@@ -36,52 +36,137 @@ faqs = [
     )
 ]
 
+pacakge_table=[
+    {   
+        'title':'Consultation over phone',
+        'isAvailable':[
+            'yes','yes','yes',
+        ],
+    },
+    {
+        'title':'Acquiring an acceptance letter',
+        'isAvailable':[
+            'yes','yes','yes',
+        ]
+    },
+    {
+        'title':'Certificate and mark-sheet translation & Notarization ',
+        'isAvailable':[
+            'yes','yes','yes',
+        ]
+    },
+    {
+        'title':'Assistance with visa procedure',
+        'isAvailable':[
+            'yes','yes','yes',
+        ]
+    },
+    {
+        'title':'Proper academic guidelines throughout the duration of the study',
+        'isAvailable':[
+            'yes','yes','yes',
+        ]
+    },
+    {
+        'title':'Having power of attorney on behalf of the student',
+        'isAvailable':[
+            'no','yes','yes',
+        ]
+    },
+    {
+        'title':'Acquiring the Turkish Student Certificate (Öğrenci Belgesi)',
+        'isAvailable':[
+            'no','yes','yes',
+        ]
+    },
+        {
+        'title':'Language course registration',
+        'isAvailable':[
+            'no','yes','yes',
+        ]
+    },
+    {
+        'title':'Turkish residence permit application ',
+        'isAvailable':[
+            'no','yes','yes',
+        ]
+    },
+    {
+        'title':'Live consultancy meeting via video conferencing',
+        'isAvailable':[
+            'no','no','yes',
+        ]
+    },
+    {
+        'title':'Sending all original documents to students via international cargo',
+        'isAvailable':[
+            'no','no','yes',
+        ]
+    },
+    
+    {
+        'title':'Hotel booking/ student dormitory registration',
+        'isAvailable':[
+            'no','no','yes',
+        ]
+    },
+    {
+        'title':'Airport pickup from İstanbul',
+        'isAvailable':[
+            'no','no','yes',
+        ]
+    },
+    {
+        'title':'Health Insurance ',
+        'isAvailable':[
+            'no','no','yes',
+        ]
+    },
+    
+]
+
 services =[
     {
-        'title':'Standard Services',
+        'title':'Before University Application',
         'body':[
-            'University Application',
-            'Acquiring an acceptance letter',
-            'Taking power of attorney on behalf of the student',
+            'Expert consultancy meeting via video conferencing',
+            'University and department choice guidelines according to student\'s academic profile and preference',
+            'Assistance with gathering all required documents for university application',
+            'Draftworks for university application', 
+        ]
+    },
+    {
+        'title':'Student Registration',
+        'body':[
+            'University registration (Paperwork and Admission)',
+            'Having power of attorney on behalf of the student',
             'Certificate and mark sheet Translation',
             'Certificate and mark sheet notarization',
-            'Acquiring the Turkish Student Certificate(Öğrenci Belgesi)',
-            'Hotel Booking',
-            'Health Insurance',
-            'Assistance with visa procedure',
-            'Turkish Residence Permit Application'
+            'Acquiring the acceptance letter',
+            'Acquiring the Turkish Student Certificate (Öğrenci Belgesi)',
         ]
     },
     {
-        'title':'Premium Services',
+        'title':'Visa Application & Travel',
         'body':[
-            'Live consultancy meeting via video conferencing',
-            'University application',
-            'Acquiring an acceptance letter',
-            'Having power of attorney on behalf of the student',
-            'Certificate and mark-sheet translation',
-            'Certificate and mark sheet notarization',
-            'Acquiring the Turkish Student Certificate (Öğrenci Belgesi)',
-            'ending all original documents to students via International cargo',
-            'Assistance with visa procedure',
-            'Hotel booking/ student dormitory registration',
-            'Air ticket reservation',
-            'Airport pickup with a car (from Türkiye)',
-            'One night stay in Istanbul (at a 4-star hotel) ',
+            'Getting an appointment for the visa center',
+            'Guideline on gathering All required document',
+            'Hotel Booking/ Student Dormitory Registration',
+            'Air Ticket Reservation',
+            'Sending All Original Documents to Students via International Cargo (Only for Premium Services',
+        ]
+    },
+    {
+        'title':'Arrival & Post-Arrival Services',
+        'body':[
+            'Purchasing Air Ticket',
+            'Airport pickup with a car (From Türkiye)',
+            'One night stay in Istanbul (at a 4-star hotel)',
             'Transportation to campus/city (BUS/AIR)',
             'Health insurance',
-            'Turkish residence permit application',
-            'Language course registration',
-            'Proper academic guidelines throughout the duration of the study',
-        ]
-    },
-    {
-        'title':'Basic Services',
-        'body':[
-            'University application',
-            'Acquiring an Acceptance Letter',
-            'Assistance with visa procedure (proper guidance)',
-
+            'Turkish Residence Permit Application. (Paperwork and appointment)',
+            'Language Courses Registration (Turkish/English/Arabic according to requirements)',
+            'Academic Guidelines',
         ]
     },
 ]
