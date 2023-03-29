@@ -45,7 +45,7 @@ class BlogsSiteMap(Sitemap):
     protocol = 'https'
     
     def items(self):
-        return Blog.objects.filter(status="published").order_by('-created_at')
+        return Blog.objects.filter(status="published").order_by('-created_at').distinct()
 
     def lastmod(self,obj):
         return obj.last_modified
@@ -60,7 +60,7 @@ class PropertiesSiteMap(Sitemap):
     protocol = 'https'
 
     def items(self):
-        return Property.objects.all().order_by('-created_at')
+        return Property.objects.all().order_by('-created_at').distinct()
 
     def lastmod(self,obj):
         return obj.last_modified

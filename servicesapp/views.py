@@ -18,9 +18,13 @@ def home(request):
 #study/education home page
 def study(request):
     featured_blogs = Blog.objects.filter(featured=True).order_by('view_count')[:6]
+    blog = Blog.objects.filter(slug='why-students-should-come-to-turkiye');
+    if blog:
+        blog = blog[0];
     context={
         'faqs': edu_utils.faqs,
         'featured_blogs':featured_blogs,
+        'why_turkey_blog': blog,
         'services':edu_utils.services,
         'working_process':edu_utils.working_process,
         'meta': seo_utils.meta_study(),

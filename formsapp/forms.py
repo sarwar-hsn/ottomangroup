@@ -29,6 +29,10 @@ class ConsultancyForm(forms.ModelForm):
             'time',
             'message',
         ]
+        labels={
+            'date':('Date you want to meet'),
+            'time':('Scheduled time'),
+        }
         widgets = {
             'full_name': forms.TextInput(attrs={'placeholder':'your full name'}) ,
             'date' : DatePickerInput(options={"format": "MM/DD/YYYY"}),

@@ -161,6 +161,13 @@ AWS_S3_CUSTOM_DOMAIN = 'ottomangrp.ams3.cdn.digitaloceanspaces.com'
 STATICFILES_STORAGE = 'togroot.cdn.backends.StaticStorage'
 DEFAULT_FILE_STORAGE = 'togroot.cdn.backends.PublicMediaStorage'
 
+#withoutcdn
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+# STATIC_URL = 'https://ottomangrp.ams3.digitaloceanspaces.com/static/'
+# MEDIA_URL = 'https://ottomangrp.ams3.digitaloceanspaces.com/media/'
+
+#withcdn
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
 STATICFILES_LOCATION = 'static'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
