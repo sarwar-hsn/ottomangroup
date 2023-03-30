@@ -28,7 +28,8 @@
         <h1 class="display-4 mb-4">Ottoman Group(TOG) Real-Estate</h1>
         <p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">Be the owner of a property from the comfrom of your home</p>
         <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="100">
-          <span><a href="{% url 'formsapp:formsapp_book_consultancy' %}" class="btn btn-primary rounded mx-1">Free Consultancy</a></span>
+            <span><a href="{% url 'servicesapp:servicesapp_properties' %}" class="btn btn-primary rounded mx-1">Properties</a></span>
+            <span><a href="{% url 'formsapp:formsapp_book_consultancy' %}" class="btn btn-primary rounded mx-1">Free Consultancy</a></span>
         </div>
       </div>
       <!-- /column -->
@@ -181,19 +182,16 @@
         <!--/column -->
         <div class="col-lg-6">
             <h2 class="display-4 mb-3">Why Turkiye?</h2>
-            <p class="lead fs-lg">
-                Please provide a one or two line title here.
-            </p>
+            
             <p class="mb-6">
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                In today's world, Türkiye can be considered the best and most convenient county for real estate investment ventures. Being situated in the junction of Asia, Europe, Arabia, and Africa, Türkiye has an amazing geo-location.
+                Not only does the Turkish government offers residence permit and citizenship opportunities by investing in the real estate sector in Türkiye, but this investment could also turn out to be a very profitable one due to the large number of tourists visiting Türkiye every year. 
+                Social life in Türkiye is peaceful, festive, lively, and free of racism making it an amazing country for foreigners to have a second home in.
             </p>
-            <p class="mb-6">
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            </p>
-            <a href="#" class="btn btn-expand btn-soft-primary rounded-pill">
+            <a href="{{blog.get_absolute_url}}" class="btn btn-expand btn-soft-primary rounded-pill">
                 <i class="uil uil-arrow-right"></i>
-                <span>linkblog</span>
-            </a>
+                <span>details</span>
+            </a> 
         </div>
         <!--/column -->
     </div>

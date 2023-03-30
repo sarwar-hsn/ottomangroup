@@ -36,7 +36,7 @@
         </div>
         <!-- /.position-relative -->
         <div class="my-10">
-            <a class="lead fs-20 hover more text-orange" href="{% url 'blogsapp:blogsapp_home' %}">Explore More</a>
+            <a class="lead fs-20 hover more text-orange" href="{% url 'blogsapp:blogsapp_home' %}{% if category %}category/{{category}}{% endif %}">Explore More</a>
         </div>
     </div>
     <!-- /.container -->

@@ -40,9 +40,13 @@ def study_packages(request):
     return render(request, 'servicesapp/views/study_packages.html',context=context) 
 #real-estate home page
 def real_estate(request):
+    blog = Blog.objects.filter(slug='investment-opportunities-turkish-real-estate');
+    if blog:
+        blog = blog[0];
     context={
         'featured_properties':Property.objects.all().order_by('-created_at')[:5],
         'services':realestate_utils.services,
+        'blog':blog,
         'meta': seo_utils.meta_real_estate(),
     }
     return render(request, 'servicesapp/views/real-estate.html',context=context)
