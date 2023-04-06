@@ -1,3 +1,4 @@
+
 class Service():
     def __init__(self,title,description,icon,color,link):
         self.title = title;
@@ -52,3 +53,4 @@ all_services = [
                 color="bg-red",
                 link='servicesapp:servicesapp_service_solutions'),
         ]
+

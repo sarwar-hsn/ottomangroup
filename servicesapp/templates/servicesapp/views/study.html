@@ -143,54 +143,26 @@
     <div class="container py-15 py-md-17">
         <div class="row gx-md-5 gy-5 mt-n19 justify-content-center">
             <h2 class="fs-20 text-center">Which university do you want to study at?</h2>
-            <div class="col-md-6 col-xl-3">
-                <div class="card shadow-lg">
-                    <div class="card-body p-2">
-                    <i class="uil uil-book-open text-green fs-40"></i>
-                    <h4>Public University</h4>
-                        Turkish public universities meet European education standards, offer Erasmus exchanges, internships, and dormitories on safe, large campuses free of politics. Low tuition fees make them accessible to students.
+            {% for university in university_types %}
+                <div class="col-md-6 col-xl-3">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-2">
+                        <i class="{{university.class}}"></i>
+                        <h4>{{university.title}}</h4>
+                            {{university.body}}
+                        </div>
+                        <!--/.card-body -->
+                        <div class="card-footer text-center">
+                        <a href="{{university.blog.get_absolute_url}}" class="hover-2 text-{{university.color}}">Learn More</a>
+                        </div>
+                        <!-- /.card-footer -->
+                        
                     </div>
-                    <!--/.card-body -->
+                    <!--/.card -->
                 </div>
-                <!--/.card -->
-            </div>
-            <!--/column -->
-            <div class="col-md-6 col-xl-3">
-                <div class="card shadow-lg">
-                    <div class="card-body p-3">
-                    <i class="uil uil-book text-red fs-40"></i>
-                    <h4>Privet University:</h4>
-                        Turkey has excellent private universities with top rankings, quality education, and opportunities to study in English, compensating for higher costs compared to public universities.
-                    </div>
-                    <!--/.card-body -->
-                </div>
-                <!--/.card -->
-            </div>
-            <!--/column -->
-            <div class="col-md-6 col-xl-3">
-                <div class="card shadow-lg">
-                    <div class="card-body px-4 py-3">
-                    <i class="uil uil-book-medical text-primary fs-40"></i>
-                    <h4>Medical University</h4>
-                    Turkey's healthcare system is one of the world's best, with improving quality reflected in medical colleges. The country offers unprecedented job opportunities for doctors.
-                    </div>
-                    <!--/.card-body -->
-                </div>
-                <!--/.card -->
-            </div>
-            <!--/column -->
-            <div class="col-md-6 col-xl-3">
-                <div class="card shadow-lg">
-                    <div class="card-body p-3">
-                    <i class="uil uil-english-to-chinese text-violet fs-40"></i>
-                    <h4>Language Institute</h4>
-                    Turkish language proficiency is recommended for students whose medium of instruction is Turkish. Learning Turkish is also beneficial for socializing and interacting with locals.
-                    </div>
-                    <!--/.card-body -->
-                </div>
-                <!--/.card -->
-            </div>
-            <!--/column -->
+                <!--/column -->
+            {% endfor %}
+
         </div>
         <!--/.row -->
     </div>

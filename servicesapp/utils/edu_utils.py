@@ -1,3 +1,4 @@
+from blogsapp.models import Blog
 class Faq():
     def __init__(self,id,question,answer):
         self.id = id;
@@ -211,4 +212,44 @@ working_process=[
         'icon':'',
         'text':'Applying for a Student Resident Permit.',
     },
+]
+
+
+
+def retrive_blog(slug):
+    blog = Blog.objects.filter(slug=slug)
+    if blog:
+        return blog[0]
+    else:
+        return None
+
+university_types=[
+    {
+        'title':'Public University',
+        'body':'Turkish public universities meet European education standards, offer Erasmus exchanges, internships, dormitories, campuses free of politics.',
+        'class': 'uil uil-book-open text-green fs-40',
+        'color': 'green',
+        'blog': retrive_blog('public-universities-turkey'),
+    },
+    {
+        'title':'Privet University',
+        'body':'Turkey has excellent private universities with top rankings, quality education, and opportunities to study in English, compensating for higher costs compared to public universities.',
+        'class': 'uil uil-book text-red fs-40',
+        'color': 'red',
+        'blog': retrive_blog('private-universities-turkey'),
+    },
+    {
+        'title':'Medical University',
+        'body':'Turkey\'s healthcare system is one of the world\'s best, with improving quality reflected in medical colleges. The country offers unprecedented job opportunities for doctors.',
+        'class': 'uil uil-book-medical text-primary fs-40',
+        'color': 'primary',
+        'blog': retrive_blog('medical-universities-turkey'),
+    },
+    {
+        'title':'Language Institute',
+        'body':'Turkish language proficiency is recommended for students whose medium of instruction is Turkish. Learning Turkish is also beneficial for socializing and interacting with locals.',
+        'class': 'uil uil-english-to-chinese text-violet fs-40',
+        'color': 'violet',
+        'blog': retrive_blog('language-schools-turkey'),
+    }
 ]

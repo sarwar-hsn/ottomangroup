@@ -5,6 +5,7 @@ from .models import Property,PropertyImages
 from django.core.paginator import Paginator
 from django.db.models import Q
 from mainapp.utils import seo_utils
+from django.shortcuts import get_object_or_404
 
 #services home page
 def home(request):
@@ -20,6 +21,7 @@ def home(request):
 def study(request):
     featured_blogs = Blog.objects.filter(featured=True).order_by('view_count')[:6]
     blog = Blog.objects.filter(slug='why-students-should-come-to-turkiye');
+    
     if blog:
         blog = blog[0];
     context={
@@ -28,6 +30,7 @@ def study(request):
         'why_turkey_blog': blog,
         'working_process':edu_utils.working_process,
         'meta': seo_utils.meta_study(),
+        'university_types':edu_utils.university_types,
     }
     return render(request, 'servicesapp/views/study.html',context=context)
 #this is study package page
