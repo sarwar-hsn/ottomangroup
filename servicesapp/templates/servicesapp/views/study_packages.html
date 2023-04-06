@@ -19,10 +19,10 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
                         data-group="page-title">
-                        <h1 class="display-5 mb-4">Ottoman Group(TOG) Education Packages</h1>
+                        <h1 class="display-5 mb-4">The Ottoman Group(TOG) Education Packages</h1>
                         <p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">
-                            Choose what fits you the
-                            <span class="underline-2 underline-gradient-1"><em> best</em></span>
+                            We offer excellent quality service at a 
+                            <span class="underline-2 underline-gradient-1"><em> great price</em></span>
                         </p>
                         <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
                             data-delay="600">
@@ -46,7 +46,7 @@
             <p class="lead fs-lg">We offer <span class="underline">great prices</span>, premium and quality services.</p>
             <div class="row">
                 <div class="col-lg-4">
-                    <button type="button" id="extra-services-btn" class="btn btn-primary rounded-xl">Check also other  services</button>
+                    <button type="button" id="extra-services-btn" class="btn btn-primary rounded-xl">check our other services</button>
                 </div>
                 <!--/column -->
             </div>
@@ -93,7 +93,7 @@
     {% comment %} extra services {% endcomment %}
     <section id="extra-services" class="wrapper bg-light">
         <div class="container py-14 py-md-16">
-            <h2 class="display-5 mb-7 text-center">We also offer</h2>
+            <h2 class="display-5 mb-7 text-center">Our Other Services</h2>
             <div class="pricing-wrapper">
                 <div class="row gx-0 gy-6 mt-2">
                     {% for service in services %}
@@ -103,7 +103,7 @@
                                     <h4 class="card-title">{{service.title}}</h4>
                                     <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8">
                                         {% for item in service.body %}
-                                            <li><i class="uil uil-check"></i><span><strong>1</strong> {{item}} </span></li>
+                                            <li><i class="uil uil-check"></i><span> {{item}} </span></li>
                                         {% endfor %}
                                     </ul>
                                 </div>
