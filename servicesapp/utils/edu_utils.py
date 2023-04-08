@@ -226,7 +226,7 @@ def retrive_blog(slug):
 university_types=[
     {
         'title':'Public University',
-        'body':'Turkish public universities meet European education standards, offer Erasmus exchanges, internships, dormitories, campuses free of politics.',
+        'body':'Turkish public universities meet European education standards, offer Erasmus exchanges, internships,government dormitories, campuses free of politics at very low cost.',
         'class': 'uil uil-book-open text-green fs-40',
         'color': 'green',
         'blog': retrive_blog('public-universities-turkey'),
