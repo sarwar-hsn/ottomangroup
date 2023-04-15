@@ -49,6 +49,7 @@ def real_estate(request):
     context={
         'featured_properties':Property.objects.all().order_by('-created_at')[:5],
         'services':realestate_utils.services,
+        'package_table':realestate_utils.pacakge_table,
         'blog':blog,
         'meta': seo_utils.meta_real_estate(),
     }

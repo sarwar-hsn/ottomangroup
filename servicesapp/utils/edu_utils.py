@@ -241,7 +241,7 @@ university_types=[
     {
         'title':'Medical University',
         'body':'Turkey\'s healthcare system is one of the world\'s best, with improving quality reflected in medical colleges. The country offers unprecedented job opportunities for doctors.',
-        'class': 'uil uil-book-medical text-primary fs-40',
+        'class': 'uil uil-book-medical text-white fs-40',
         'color': 'primary',
         'blog': retrive_blog('medical-universities-turkey'),
     },

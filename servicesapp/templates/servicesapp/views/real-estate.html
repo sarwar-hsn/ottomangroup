@@ -52,7 +52,7 @@
                 <div class="card-body">
                 <img src="{% static 'assets/img/icons/solid/edit.svg' %}" class="svg-inject icon-svg icon-svg-sm solid-mono text-fuchsia mb-3" alt="" />
                 <h4>Before Purchase</h4>
-                <ul>
+                <ul class="ps-0">
                     <li>Real Estate Consultancy</li>
                     <li>All Kind Of Legal Advice</li>
                     <li>Providing Opppotunities for Major Investment</li>
@@ -68,7 +68,7 @@
                 <div class="card-body">
                 <img src="{% static 'assets/img/icons/lineal/analytics.svg' %}" class="svg-inject icon-svg icon-svg-sm solid-mono text-yellow mb-3" alt="" />
                 <h4>During Purches</h4>
-                <ul>
+                <ul class="ps-0">
                     <li>Opening Bank Account</li>
                     <li>Currency Exchange</li>
                     <li>Document Translation</li>
@@ -85,7 +85,7 @@
                 <div class="card-body">
                 <img src="{% static 'assets/img/icons/lineal/briefcase.svg' %}" class="svg-inject icon-svg icon-svg-sm solid-mono text-green mb-3" alt="" />
                 <h4>After Purchase</h4>
-                <ul>
+                <ul class="ps-0">
                     <li>Property Management</li>
                     <li>Rental Management</li>
                     <li>Legal & Financial Advice</li>
@@ -102,12 +102,70 @@
     <div class="row">
         <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
         <h2 class="fs-16 text-uppercase text-muted mb-3">Real-estate Services</h2>
-        <h3 class="display-3 mb-10 px-xl-10 px-xxl-15">Our service packages</h3>
+        <h3 class="display-6 mb-10 px-xl-10 px-xxl-15">Our service packages</h3>
         </div>
         <!-- /column -->
     </div>
     <!-- /.row -->
-    <ul class="nav nav-tabs nav-tabs-basic">
+    <div class="table-responsive mt-10">
+                <table class="table table-borderless table-striped text-center">
+                    <thead>
+                    <tr>
+                        <th class="w-25"></th>
+                        <th>
+                            <div class="h4 mb-1">Basic Plan</div>
+                        </th>
+                        <th>
+                            <div class="h4 mb-1">Premium Plan</div>
+                        </th>
+                        <th>
+                            <div class="h4 mb-1">Overseas Plan</div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <div class="accordion accordion-wrapper" id="accordionExample">
+                        {% for package in package_table %}
+                            <tr>
+                                <td class="option text-start">
+                                    <div class="accordion-item">
+                                        <div>
+                                            <button class="collapsed btn" data-bs-toggle="collapse"
+                                                data-bs-target="#accordion-collapse-3-{{package.id}}" aria-expanded="true"
+                                                aria-controls="accordion-collapse-3-{{faq.id}}">
+                                                <i class="uil uil-angle-down me-2 text-primary"></i>
+                                                 {{package.title}}
+                                            </button>
+                                        </div>
+                                        <!--/.card-header -->
+                                        <div id="accordion-collapse-3-{{package.id}}" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="card-body bg-soft-primary m-2">
+                                                <p>{{package.details}}</p>
+                                            </div>
+                                            <!--/.card-body -->
+                                        </div>
+                                        <!--/.accordion-collapse -->
+                                    </div>
+                                    <!--/.accordion-item -->
+                                </td>
+                                {% for item in package.isAvailable %}
+                                    {% if item == 'yes' %}
+                                        <td><i class="uil uil-check bg-pale-primary text-primary rounded-circle p-1"></i></td>
+                                    {% else %}
+                                        <td><i class="uil uil-times bullet-soft-red text-red"></i></td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </div>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+    {% comment %} <ul class="nav nav-tabs nav-tabs-basic">
         <div class="container">
             <div class="row justify-content-center">
                 <li class="nav-item col-3 text-center"> <a class="nav-link active" data-bs-toggle="tab" href="#tab2-1">{{services.0.title}}</a> </li>
@@ -158,7 +216,7 @@
         </div>
         <!--/.tab-pane -->
     </div>
-    <!-- /.tab-content -->
+    <!-- /.tab-content --> {% endcomment %}
     </div>
     <!-- /.container -->
 </section>

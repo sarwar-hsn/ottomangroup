@@ -9,6 +9,12 @@
         text-align: justify;
         text-justify: inter-word;
     }
+    ..plyr__poster{
+        background-color: white !important;
+    }
+    .plyr {
+        background: white !important;
+    }
 
 </style>
 
@@ -27,10 +33,10 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown"
                     data-group="page-title">
-                    <h1 class="display-4 mb-4">The Ottoman Group(TOG) Education</h1>
-                    <p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">
-                        Make your education dreams come true in the <span
-                            class="underline-2 underline-gradient-1"><em>Turkey</em></span> with the assurance of TOG
+                    <h1 class="display-6 mb-4">The Ottoman Group(TOG) Education</h1>
+                    <p class="lead fs-sm px-xl-12 px-xxl-6 mb-7">
+                        Make your education dreams come true in the
+                        Turkey with the assurance of TOG
                         Education Consultancy.
                     </p>
                     <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons"
@@ -53,7 +59,7 @@
 
 
 {% comment %} reasons to choose turkey {% endcomment %}
-<section class="wrapper bg-light">
+<section class="wrapper bg-soft-primary">
     <div class="container py-14 py-md-16">
         <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
             <div class="col-lg-7 order-lg-2">
@@ -63,7 +69,7 @@
             <!--/column -->
             <div class="col-lg-5">
                 <h2 class="fs-15 text-uppercase text-line text-primary mb-3 ">Why Turkey?</h2>
-                <h3 class="display-5 mb-7">Reasons to Choose Turkey.</h3>
+                <h3 class="display-6 mb-7">Reasons to Choose Turkey.</h3>
                 <div>
                     <p class="justified-text">
                         Each year, a lot of students go to different countries of the world for higher studies. 
@@ -90,7 +96,7 @@
 <!-- /section -->
 
 {% comment %} eligible or not {% endcomment %}
-<section class="wrapper bg-light">
+<section class="wrapper bg-soft-primary">
     <div class="container py-14 py-md-16">
         <div class="row">
             <div class="col-xl-10 mx-auto">
@@ -121,23 +127,17 @@
 
 
 {% comment %} working process {% endcomment %}
-<section class="wrapper bg-light">
+<section class="wrapper bg-soft-primary">
     <div class="container pb-15 pb-md-15">
         <div class="row text-center">
+            
             <div class="col-lg-9 mx-auto">
                 <h2 class="fs-15 text-uppercase text-muted mb-3 mt-12">Our Service Execution Roadmap</h2>
-                <h3 class="display-4 mb-0 text-center px-xl-10 px-xxl-15">From Your Home To Istanbul</h3>
+                <h3 class="display-6 mb-0 text-center px-xl-10 px-xxl-15">From Your Home To Istanbul</h3>
                 <div class="row gx-lg-8 gx-xl-12 process-wrapper text-start mt-10">
-                    {% for process in working_process %}
-                        <div class="col-md-4"> 
-                            <span class="avatar bg-soft-primary text-primary w-10 h-10">
-                                <span>{{forloop.counter}}</span>
-                            </span>
-                            <p class="mb-0">{{process.text}}</p>
-                        </div>
-                        <!--/column -->
-                    {% endfor %}
-                    
+                    <video poster="{% static 'assets/media/study/study_plan_thumbnail.png' %}" class="player" playsinline controls preload="none">
+                        <source src="{% static 'assets/media/study/study_plan.mp4' %}" type="video/mp4">
+                    </video>
                 </div>
                 <!--/.row -->
             </div>
@@ -154,8 +154,8 @@
 
 
 {% comment %} packages {% endcomment %}
-<section class="wrapper bg-light">
-    <div class="container py-15 py-md-17">
+<section class="wrapper bg-soft-primary">
+    <div class="container py-15 py-md-17 mt-15">
         <div class="row gx-md-5 gy-5 mt-n19 justify-content-center">
             <h2 class="fs-20 text-center">Which university do you want to study at?</h2>
             {% for university in university_types %}
@@ -191,7 +191,7 @@
 
 {% comment %} faqs {% endcomment %}
 <section class="wrapper bg-light">
-    <div class="container py-14 py-md-16">
+    <div class="container py-10 py-md-16">
         <div class="card bg-soft-primary rounded-4">
             <div class="card-body p-md-10 p-xl-11">
                 <div class="row gx-lg-8 gx-xl-12 gy-10">
@@ -206,24 +206,24 @@
                     <div class="col-lg-6">
                         <div class="accordion accordion-wrapper" id="accordionExample">
                             {% for faq in faqs %}
-                            <div class="card plain accordion-item">
-                                <div class="card-header" id="headingOne">
-                                    <button class="collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#accordion-collapse-3-{{faq.id}}" aria-expanded="true"
-                                        aria-controls="accordion-collapse-3-{{faq.id}}">{{faq.question}}</button>
-                                </div>
-                                <!--/.card-header -->
-                                <div id="accordion-collapse-3-{{faq.id}}" class="accordion-collapse collapse"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <p>{{faq.answer}}</p>
+                                <div class="card plain accordion-item">
+                                    <div class="card-header" id="headingOne">
+                                        <button class="collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#accordion-collapse-3-{{faq.id}}" aria-expanded="true"
+                                            aria-controls="accordion-collapse-3-{{faq.id}}">{{faq.question}}</button>
                                     </div>
-                                    <!--/.card-body -->
+                                    <!--/.card-header -->
+                                    <div id="accordion-collapse-3-{{faq.id}}" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p>{{faq.answer}}</p>
+                                        </div>
+                                        <!--/.card-body -->
+                                    </div>
+                                    <!--/.accordion-collapse -->
                                 </div>
-                                <!--/.accordion-collapse -->
-                                {% endfor %}
-                            </div>
-                            <!--/.accordion-item -->
+                                <!--/.accordion-item -->
+                            {% endfor %}
                         </div>
                         <!--/.accordion -->
                     </div>
