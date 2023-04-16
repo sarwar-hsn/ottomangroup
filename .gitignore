@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io
 
-
-
+#localdevserver
+local.py
 
 ### OSX ###
 .DS_Store
