@@ -25,8 +25,8 @@
   <div class="container pt-10 pb-15 pt-md-14 pb-md-20 text-center">
     <div class="row">
       <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown" data-group="page-title">
-        <h1 class="display-4 mb-4">The Ottoman Group(TOG) Real-Estate</h1>
-        <p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">Be the owner of a property from the comfrom of your home</p>
+        <h1 class="display-6 mb-4">The Ottoman Group(TOG) Real-Estate</h1>
+        <p class="lead fs-sm px-xl-12 px-xxl-6 mb-7">Be the owner of a property from the comfrom of your home</p>
         <div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="100">
             <span><a href="{% url 'servicesapp:servicesapp_properties' %}" class="btn btn-primary rounded mx-1">Properties</a></span>
             <span><a href="{% url 'formsapp:formsapp_book_consultancy' %}" class="btn btn-primary rounded mx-1">Free Consultancy</a></span>
@@ -130,7 +130,7 @@
                                 <td class="option text-start">
                                     <div class="accordion-item">
                                         <div>
-                                            <button class="collapsed btn" data-bs-toggle="collapse"
+                                            <button class="collapsed btn text-wrap m-0 px-1" data-bs-toggle="collapse"
                                                 data-bs-target="#accordion-collapse-3-{{package.id}}" aria-expanded="true"
                                                 aria-controls="accordion-collapse-3-{{faq.id}}">
                                                 <i class="uil uil-angle-down me-2 text-primary"></i>
@@ -165,58 +165,6 @@
                 </table>
             </div>
             <!-- /.table-responsive -->
-    {% comment %} <ul class="nav nav-tabs nav-tabs-basic">
-        <div class="container">
-            <div class="row justify-content-center">
-                <li class="nav-item col-3 text-center"> <a class="nav-link active" data-bs-toggle="tab" href="#tab2-1">{{services.0.title}}</a> </li>
-                <li class="nav-item col-3 text-center"> <a class="nav-link" data-bs-toggle="tab" href="#tab2-2">{{services.1.title}}</a> </li>
-                <li class="nav-item col-3 text-center"> <a class="nav-link" data-bs-toggle="tab" href="#tab2-3">{{services.2.title}}</a> </li>
-            </div>
-        </div>
-    </ul>
-    <!-- /.nav-tabs -->
-    <div class="tab-content mt-6 mt-lg-8">
-        <div class="tab-pane fade show active" id="tab2-1">
-            <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-                {% for service in services.0.subservices %}
-                    <div class="col-md-6 col-lg-3">
-                        <h4>{{service.title}}</h4>
-                        <p class="mb-3">{{service.body}}</p>
-                    </div>
-                    <!--/column -->
-                {% endfor %}
-            </div>
-            <!--/.row -->
-        </div>
-        <!--/.tab-pane -->
-        <div class="tab-pane fade" id="tab2-2">
-            <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-                {% for service in services.1.subservices %}
-                    <div class="col-md-6 col-lg-3">
-                        <h4>{{service.title}}</h4>
-                        <p class="mb-3">{{service.body}}</p>
-                    </div>
-                    <!--/column -->
-                {% endfor %}
-            </div>
-            <!--/.row -->
-        </div>
-        <!--/.tab-pane -->
-        <div class="tab-pane fade" id="tab2-3">
-            <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-                {% for service in services.2.subservices %}
-                    <div class="col-md-6 col-lg-3">
-                    <h4>{{service.title}}</h4>
-                    <p class="mb-3">{{service.body}}</p>
-                </div>
-                <!--/column -->
-                {% endfor %}
-            </div>
-            <!--/.row -->
-        </div>
-        <!--/.tab-pane -->
-    </div>
-    <!-- /.tab-content --> {% endcomment %}
     </div>
     <!-- /.container -->
 </section>
@@ -239,7 +187,7 @@
         </div>
         <!--/column -->
         <div class="col-lg-6">
-            <h2 class="display-4 mb-3">Why Turkiye?</h2>
+            <h2 class="display-6 mb-3">Why Turkiye?</h2>
             
             <p class="mb-6">
                 In today's world, Türkiye can be considered the best and most convenient county for real estate investment ventures. Being situated in the junction of Asia, Europe, Arabia, and Africa, Türkiye has an amazing geo-location.
