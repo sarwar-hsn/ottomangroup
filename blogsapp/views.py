@@ -13,7 +13,7 @@ NO_OF_RECENT_BLOGS = 3
 #blog home page
 def index(request):
     blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 2) 
+    paginator = Paginator(blog_list, 6) 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context={
@@ -27,7 +27,7 @@ def index(request):
 
 def category(request,name):
     blog_list = Blog.objects.filter(category__name=name)
-    paginator = Paginator(blog_list, 2) # Show 25 contacts per page.
+    paginator = Paginator(blog_list, 6) # Show 6 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context={
@@ -43,7 +43,7 @@ def category(request,name):
 
 def hashtag(request,tag):
     blog_list = Blog.objects.filter(tags__name=tag)
-    paginator = Paginator(blog_list, 2) # Show 25 contacts per page.
+    paginator = Paginator(blog_list, 6) # Show 6 contacts per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context={
@@ -63,7 +63,7 @@ def search(request):
         blog_list = Blog.objects.filter(
                 Q(title__icontains=query) | Q(overview__icontains=query) |  Q(content__icontains=query) 
             ).distinct()
-        paginator = Paginator(blog_list, 2) # Show 25 contacts per page.
+        paginator = Paginator(blog_list, 6) # Show 6 contacts per page.
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         context={
