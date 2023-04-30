@@ -38,6 +38,7 @@ admin.site.index_title = "Welcome to TOG"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('services/',include('servicesapp.urls',namespace='servicesapp')),
     path('blogs/',include('blogsapp.urls',namespace='blogsapp')),
     path('forms/',include('formsapp.urls',namespace='formsapp')),

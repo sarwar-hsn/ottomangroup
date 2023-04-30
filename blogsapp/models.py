@@ -8,7 +8,7 @@ from mainapp.utils.helpers import my_reverse
 from sorl.thumbnail import ImageField, delete  
 from django_cleanup.signals import cleanup_pre_delete
 from meta.models import ModelMeta
-
+from tinymce.models import HTMLField 
 
 # Create your models here.
 class Author(models.Model):
@@ -72,7 +72,7 @@ class Blog(ModelMeta,models.Model):
     thumbnail_alt = models.CharField(max_length=100)
     overview = models.TextField()
     tags = models.ManyToManyField(Tag,blank=True)
-    content = models.TextField(blank=True,null=True)
+    content = HTMLField()
     status = models.CharField(max_length=20,default=DRAFT,choices=post_status)
     rating = models.IntegerField(default=0)
     view_count = models.PositiveIntegerField(default=0)
@@ -151,12 +151,12 @@ def blog_image_path(instance,filename,*args, **kwargs):
     year = datetime.strftime('%Y')
     month = datetime.strftime('%b')
     base, ext = os.path.splitext(filename)
-    return f"blogs/{year}/{month}/{instance.property.slug}/images/{base}{ext}"
+    return f"blogs/{year}/{month}/{instance.blog.slug}/images/{base}{ext}"
 
 def validate_file_size(value):
     filesize= value.size
-    if filesize > 204800:
-        raise ValidationError("You cannot upload file more than 200kb")
+    if filesize > 3145728:
+        raise ValidationError("You cannot upload file more than 300kb")
     else:
         return value
         
@@ -164,7 +164,7 @@ class BlogImages(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=blog_image_path,validators=[validate_file_size])
     def __str__(self):
-        return f"{self.property.slug}_{self.pk}"
+        return f"{self.blog.slug}_{self.pk}"
 
 def sorl_delete(**kwargs):
     delete(kwargs['file'])

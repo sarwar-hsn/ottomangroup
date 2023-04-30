@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', # new
     'django.contrib.sitemaps', # new 
     #installed app,
+    'tinymce',
     "crispy_forms",
     "crispy_bootstrap5",
     "bootstrap_datepicker_plus",
@@ -170,5 +171,31 @@ META_USE_SCHEMAORG_PROPERTIES = True
 #META_FB_PROFILE_ID
 #META_FB_PAGES
 
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+}
 
 
