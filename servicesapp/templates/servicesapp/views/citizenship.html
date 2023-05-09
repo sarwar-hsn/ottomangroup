@@ -3,6 +3,16 @@
 
 {% block inlinecss %}
 <style>
+    .justified-text{
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    ..plyr__poster{
+        background-color: white !important;
+    }
+    .plyr {
+        background: white !important;
+    }
     .service-banner-svg {
         width: 50%;
     }
@@ -38,6 +48,30 @@
     <!-- /.container -->
 </section>
 <!-- /section -->
+
+{% comment %} working process {% endcomment %}
+<section class="wrapper bg-soft-primary">
+    <div class="container pb-15 pb-md-15">
+        <div class="row text-center">
+            
+            <div class="col-lg-9 mx-auto">
+                <h2 class="fs-15 text-uppercase text-muted mb-3 mt-12">A Quick Intro</h2>
+                <div class="row gx-lg-8 gx-xl-12 process-wrapper text-start mt-10">
+                    <video poster="{% static 'assets/media/citizenship/citizenship_thumbnail.png' %}" class="player" playsinline controls preload="none">
+                        <source src="{% static 'assets/media/citizenship/citizenship.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+                <!--/.row -->
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /section -->
+
+
 <section class="wrapper">
     <div class="container mt-10">
         <div class="row justify-content-center">
